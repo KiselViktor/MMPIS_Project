@@ -5,46 +5,180 @@ import QtQuick.Dialogs 1.2
 
 ApplicationWindow {
     visible: true
-    width: 640
-    height: 480
+    width: maximumWidth
+    height: maximumHeight
     color: "#66ccff"
-    title: qsTr("X/X/X")
+    title: qsTr("Models Net")
 
-    menuBar: MenuBar {
-        Menu {
-            title: qsTr("File")
-            MenuItem {
-                text: qsTr("&Open")
-                onTriggered: console.log("Open action triggered");
-            }
-            MenuItem {
-                text: qsTr("Exit")
-                onTriggered: Qt.quit();
-            }
-        }
-    }
-
-    Button{
-        id: button1;
-        x: 300;
-        y: 150;
+    Button {
+        id: ok;
+        width: 100
+        height: 20
+        x: 100;
+        y: 190;
         style:  ButtonStyle{
                     background: Rectangle{
                         color: control.pressed ? "red":"black"
                         border.width: 2
-                        radius: 5
+                        radius: 10
                     }
                     label: Text{
-                        text: qsTr("button1")
+                        verticalAlignment: Text.AlignVCenter
+                        horizontalAlignment: Text.AlignHCenter
+                        text: qsTr("OK")
                         color: control.pressed ? "black":"red"
                     }
                 }
     }
 
-
+    Label {
+        text: qsTr("O")
+        font.pointSize: 12
+        x:80
+        y:130
+    }
 
     Label {
-        text: qsTr("Hello World")
-        anchors.centerIn: parent
+        text: qsTr("M")
+        font.pointSize: 12
+        x:80
+        y:160
+    }
+
+    TextField{
+        width: 100
+        height: 20
+        id: textField1;
+        x:100;
+        y:130;
+        placeholderText: "Введите первое число"
+    }
+
+    TextField{
+        width: 100
+        height: 20
+        id: textField2;
+        x:100;
+        y:160;
+        placeholderText: "Введите второе число"
+    }
+
+    Rectangle{
+        id: labelList
+        x: 950
+        y: 60
+        Row{
+            anchors.centerIn: parent
+            spacing:200
+            Button{
+                width: 120
+                height: 50
+                id: oneButton
+                style:  ButtonStyle{
+                            background: Rectangle{
+                                color: control.pressed ? "red":"black"
+                                border.width: 3
+                                radius: 10
+                            }
+                            label: Text{
+                                verticalAlignment: Text.AlignVCenter
+                                horizontalAlignment: Text.AlignHCenter
+                                anchors.fill: parent
+                                font.pointSize: 20
+                                text: qsTr("M/M/1")
+                                color: control.pressed ? "black":"red"
+                            }
+                        }
+
+                //onButtonClick: menuListView.currentIndex = 0
+            }
+            Button{
+                width: 120
+                height: 50
+                id: twoButton
+                style:  ButtonStyle{
+                            background: Rectangle{
+                                color: control.pressed ? "red":"black"
+                                border.width: 3
+                                radius: 10
+                            }
+                            label: Text{
+                                verticalAlignment: Text.AlignVCenter
+                                horizontalAlignment: Text.AlignHCenter
+                                anchors.fill: parent
+                                font.pointSize: 20
+                                text: qsTr("M/M/enf")
+                                color: control.pressed ? "black":"red"
+                            }
+                        }
+                //onButtonClick:    menuListView.currentIndex = 1
+            }
+            Button{
+                width: 120
+                height: 50
+                id: threeButton
+                style:  ButtonStyle{
+                            background: Rectangle{
+                                color: control.pressed ? "red":"black"
+                                border.width: 3
+                                radius: 10
+                            }
+                            label: Text{
+                                verticalAlignment: Text.AlignVCenter
+                                horizontalAlignment: Text.AlignHCenter
+                                anchors.fill: parent
+                                font.pointSize: 20
+                                text: qsTr("M/M/V")
+                                color: control.pressed ? "black":"red"
+                            }
+                        }
+
+                //onButtonClick: menuListView.currentIndex = 0
+            }
+            Button{
+                width: 120
+                height: 50
+                id: fourButton
+                style:  ButtonStyle{
+                            background: Rectangle{
+                                color: control.pressed ? "red":"black"
+                                border.width: 3
+                                radius: 10
+                            }
+                            label: Text{
+                                verticalAlignment: Text.AlignVCenter
+                                horizontalAlignment: Text.AlignHCenter
+                                anchors.fill: parent
+                                font.pointSize: 20
+                                text: qsTr("M/M/V/K")
+                                color: control.pressed ? "black":"red"
+                            }
+                        }
+
+                //onButtonClick: menuListView.currentIndex = 0
+            }
+            Button{
+                width: 120
+                height: 50
+                id: fiveButton
+                style:  ButtonStyle{
+                            background: Rectangle{
+                                color: control.pressed ? "red":"black"
+                                border.width: 3
+                                radius: 10
+                            }
+                            label: Text{
+                                verticalAlignment: Text.AlignVCenter
+                                horizontalAlignment: Text.AlignHCenter
+                                anchors.fill: parent
+                                font.pointSize: 20
+                                text: qsTr("M/M/X")
+                                color: control.pressed ? "black":"red"
+                            }
+                        }
+
+                //onButtonClick: menuListView.currentIndex = 0
+            }
+        }
     }
 }
