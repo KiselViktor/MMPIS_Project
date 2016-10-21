@@ -2,11 +2,13 @@ import QtQuick 2.6
 import QtQuick.Controls 1.5
 import QtQuick.Controls.Styles 1.4
 import QtQuick.Dialogs 1.2
+import QtQuick.Window 2.2
 
 ApplicationWindow {
     visible: true
-    width: maximumWidth
-    height: maximumHeight
+    visibility: Window.FullScreen
+    //width: maximumWidth
+    //height: maximumHeight
     color: "#66ccff"
     title: qsTr("Models Net")
 
@@ -29,6 +31,29 @@ ApplicationWindow {
                         color: control.pressed ? "black":"red"
                     }
                 }
+    }
+
+    Button {
+        id: exit;
+        width: 200
+        height: 100
+        x: 1700;
+        y: 960;
+        style:  ButtonStyle{
+                    background: Rectangle{
+                        color: control.pressed ? "red":"black"
+                        border.width: 2
+                        radius: 10
+                    }
+                    label: Text{
+                        verticalAlignment: Text.AlignVCenter
+                        horizontalAlignment: Text.AlignHCenter
+                        font.pointSize: 20
+                        text: qsTr("Exit")
+                        color: control.pressed ? "black":"red"
+                    }
+                }
+        onClicked: Qt.quit();
     }
 
     Label {
@@ -63,6 +88,8 @@ ApplicationWindow {
         placeholderText: "Введите второе число"
     }
 
+
+
     Rectangle{
         id: labelList
         x: 950
@@ -90,7 +117,7 @@ ApplicationWindow {
                             }
                         }
 
-                //onButtonClick: menuListView.currentIndex = 0
+                //onClicked: Qt.quit();
             }
             Button{
                 width: 120
@@ -111,7 +138,7 @@ ApplicationWindow {
                                 color: control.pressed ? "black":"red"
                             }
                         }
-                //onButtonClick:    menuListView.currentIndex = 1
+                //onClicked: Qt.quit();
             }
             Button{
                 width: 120
@@ -133,7 +160,7 @@ ApplicationWindow {
                             }
                         }
 
-                //onButtonClick: menuListView.currentIndex = 0
+                //onClicked: Qt.quit();
             }
             Button{
                 width: 120
@@ -155,7 +182,7 @@ ApplicationWindow {
                             }
                         }
 
-                //onButtonClick: menuListView.currentIndex = 0
+                //onClicked: Qt.quit();
             }
             Button{
                 width: 120
@@ -176,8 +203,7 @@ ApplicationWindow {
                                 color: control.pressed ? "black":"red"
                             }
                         }
-
-                //onButtonClick: menuListView.currentIndex = 0
+                 //onClicked: Qt.quit();
             }
         }
     }
