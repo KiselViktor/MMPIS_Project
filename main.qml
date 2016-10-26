@@ -6,18 +6,18 @@ import QtQuick.Window 2.2
 
 ApplicationWindow {
     visible: true
-    visibility: Window.FullScreen
-    //width: maximumWidth
-    //height: maximumHeight
+    //visibility: Window.FullScreen
+    width: maximumWidth
+    height: maximumHeight
     color: "#66ccff"
     title: qsTr("Models Net")
 
     Button {
         id: ok;
-        width: 100
-        height: 20
-        x: 100;
-        y: 190;
+        width: (100*ApplicationWindow.width)/1920
+        height: (20*ApplicationWindow.height)/1080
+        x: (100*ApplicationWindow.width)/1920;
+        y: (190*ApplicationWindow.height)/1080;
         style:  ButtonStyle{
                     background: Rectangle{
                         color: control.pressed ? "red":"black"
@@ -27,6 +27,7 @@ ApplicationWindow {
                     label: Text{
                         verticalAlignment: Text.AlignVCenter
                         horizontalAlignment: Text.AlignHCenter
+                        font.pointSize: (15*ApplicationWindow.height)/1080
                         text: qsTr("OK")
                         color: control.pressed ? "black":"red"
                     }
@@ -35,10 +36,10 @@ ApplicationWindow {
 
     Button {
         id: exit;
-        width: 200
-        height: 100
-        x: 1700;
-        y: 960;
+        width: (200*ApplicationWindow.width)/1920
+        height: (100*ApplicationWindow.height)/1080
+        x: (1700*ApplicationWindow.width)/1920;
+        y: (960*ApplicationWindow.height)/1080;
         style:  ButtonStyle{
                     background: Rectangle{
                         color: control.pressed ? "red":"black"
@@ -48,7 +49,7 @@ ApplicationWindow {
                     label: Text{
                         verticalAlignment: Text.AlignVCenter
                         horizontalAlignment: Text.AlignHCenter
-                        font.pointSize: 20
+                        font.pointSize: (20*ApplicationWindow.height)/1080
                         text: qsTr("Exit")
                         color: control.pressed ? "black":"red"
                     }
@@ -58,33 +59,35 @@ ApplicationWindow {
 
     Label {
         text: qsTr("O")
-        font.pointSize: 12
-        x:80
-        y:130
+        font.pointSize: (12*ApplicationWindow.height)/1080
+        x:(80*ApplicationWindow.width)/1920
+        y:(130*ApplicationWindow.height)/1080
     }
 
     Label {
         text: qsTr("M")
-        font.pointSize: 12
-        x:80
-        y:160
+        font.pointSize: (12*ApplicationWindow.height)/1080
+        x:(80*ApplicationWindow.width)/1920
+        y:(160*ApplicationWindow.height)/1080
     }
 
     TextField{
-        width: 100
-        height: 20
+        width:(100*ApplicationWindow.width)/1920
+        height:(20*ApplicationWindow.height)/1080
         id: textField1;
-        x:100;
-        y:130;
+        font.pointSize: (12*ApplicationWindow.height)/1080
+        x:(100*ApplicationWindow.width)/1920;
+        y:(130*ApplicationWindow.height)/1080;
         placeholderText: "Введите первое число"
     }
 
     TextField{
-        width: 100
-        height: 20
+        width:(100*ApplicationWindow.width)/1920
+        height:(20*ApplicationWindow.height)/1080
         id: textField2;
-        x:100;
-        y:160;
+        font.pointSize: (12*ApplicationWindow.height)/1080
+        x:(100*ApplicationWindow.width)/1920;
+        y:(160*ApplicationWindow.height)/1080;
         placeholderText: "Введите второе число"
     }
 
@@ -92,14 +95,14 @@ ApplicationWindow {
 
     Rectangle{
         id: labelList
-        x: 950
-        y: 60
+        x:(950*ApplicationWindow.width)/1920;
+        y:(60*ApplicationWindow.height)/1080;
         Row{
             anchors.centerIn: parent
-            spacing:200
+            spacing:(200*ApplicationWindow.width)/1920
             Button{
-                width: 120
-                height: 50
+                width:(120*ApplicationWindow.width)/1920
+                height:(50*ApplicationWindow.height)/1080
                 id: oneButton
                 style:  ButtonStyle{
                             background: Rectangle{
@@ -111,7 +114,7 @@ ApplicationWindow {
                                 verticalAlignment: Text.AlignVCenter
                                 horizontalAlignment: Text.AlignHCenter
                                 anchors.fill: parent
-                                font.pointSize: 20
+                                font.pointSize: (20*ApplicationWindow.height)/1080
                                 text: qsTr("M/M/1")
                                 color: control.pressed ? "black":"red"
                             }
@@ -120,8 +123,8 @@ ApplicationWindow {
                 //onClicked: Qt.quit();
             }
             Button{
-                width: 120
-                height: 50
+                width:(120*ApplicationWindow.width)/1920
+                height:(50*ApplicationWindow.height)/1080
                 id: twoButton
                 style:  ButtonStyle{
                             background: Rectangle{
@@ -133,16 +136,16 @@ ApplicationWindow {
                                 verticalAlignment: Text.AlignVCenter
                                 horizontalAlignment: Text.AlignHCenter
                                 anchors.fill: parent
-                                font.pointSize: 20
-                                text: qsTr("M/M/enf")
+                                font.pointSize: (20*ApplicationWindow.height)/1080
+                                text: qsTr("M/M/∞")
                                 color: control.pressed ? "black":"red"
                             }
                         }
                 //onClicked: Qt.quit();
             }
             Button{
-                width: 120
-                height: 50
+                width:(120*ApplicationWindow.width)/1920
+                height:(50*ApplicationWindow.height)/1080
                 id: threeButton
                 style:  ButtonStyle{
                             background: Rectangle{
@@ -154,7 +157,7 @@ ApplicationWindow {
                                 verticalAlignment: Text.AlignVCenter
                                 horizontalAlignment: Text.AlignHCenter
                                 anchors.fill: parent
-                                font.pointSize: 20
+                                font.pointSize: (20*ApplicationWindow.height)/1080
                                 text: qsTr("M/M/V")
                                 color: control.pressed ? "black":"red"
                             }
@@ -163,8 +166,8 @@ ApplicationWindow {
                 //onClicked: Qt.quit();
             }
             Button{
-                width: 120
-                height: 50
+                width:(120*ApplicationWindow.width)/1920
+                height:(50*ApplicationWindow.height)/1080
                 id: fourButton
                 style:  ButtonStyle{
                             background: Rectangle{
@@ -176,7 +179,7 @@ ApplicationWindow {
                                 verticalAlignment: Text.AlignVCenter
                                 horizontalAlignment: Text.AlignHCenter
                                 anchors.fill: parent
-                                font.pointSize: 20
+                                font.pointSize: (20*ApplicationWindow.height)/1080
                                 text: qsTr("M/M/V/K")
                                 color: control.pressed ? "black":"red"
                             }
@@ -185,8 +188,8 @@ ApplicationWindow {
                 //onClicked: Qt.quit();
             }
             Button{
-                width: 120
-                height: 50
+                width:(120*ApplicationWindow.width)/1920
+                height:(50*ApplicationWindow.height)/1080
                 id: fiveButton
                 style:  ButtonStyle{
                             background: Rectangle{
@@ -198,7 +201,7 @@ ApplicationWindow {
                                 verticalAlignment: Text.AlignVCenter
                                 horizontalAlignment: Text.AlignHCenter
                                 anchors.fill: parent
-                                font.pointSize: 20
+                                font.pointSize: (20*ApplicationWindow.height)/1080
                                 text: qsTr("M/M/X")
                                 color: control.pressed ? "black":"red"
                             }
